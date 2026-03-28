@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const WHATSAPP_URL = "https://wa.me/5492254414116?text=Hola%2C%20quiero%20solicitar%20un%20presupuesto";
 
@@ -30,14 +31,13 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container-premium flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center gap-2">
-          <span className={`font-heading font-800 text-xl md:text-2xl tracking-tight transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
-            ARGENBATH
-          </span>
-          <span className={`hidden sm:inline text-xs font-medium tracking-widest uppercase transition-colors ${scrolled ? "text-muted-foreground" : "text-primary-foreground/70"}`}>
-            Portátiles
-          </span>
+      <div className="container-premium flex items-center justify-between h-24 md:h-28">
+        <a href="#" className="flex items-center">
+          <img
+            src={logo}
+            alt="Grupo ArgenBath S.A."
+            className={`h-28 md:h-36 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
