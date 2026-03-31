@@ -19,13 +19,6 @@ const testimonials = [
   },
 ];
 
-const trustedBy = [
-  "Constructora del Sur",
-  "Desarrollos Costeros SA",
-  "LF Producciones",
-  "Municipalidad de Pinamar",
-  "Costa Build Group",
-];
 
 const TestimonialsSection = () => {
   return (
@@ -62,20 +55,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <ScrollReveal>
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground tracking-widest uppercase mb-8">
-              Confían en nosotros
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4">
-              {trustedBy.map((name) => (
-                <span key={name} className="text-steel font-heading font-semibold text-sm md:text-base tracking-wide">
-                  {name}
-                </span>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
