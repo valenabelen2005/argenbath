@@ -16,6 +16,8 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     empresa: "",
+    telefono: "",
+    email: "",
     servicio: "",
     zona: "",
     fecha: "",
@@ -33,6 +35,8 @@ const ContactSection = () => {
         body: JSON.stringify({
           nombre: formData.nombre,
           empresa: formData.empresa,
+          telefono: formData.telefono,
+          email: formData.email,
           servicio: formData.servicio,
           zona: formData.zona,
           fecha: formData.fecha,
@@ -41,7 +45,7 @@ const ContactSection = () => {
       });
       if (res.ok) {
         toast({ title: "Mensaje enviado", description: "Nos comunicaremos con vos a la brevedad." });
-        setFormData({ nombre: "", empresa: "", servicio: "", zona: "", fecha: "", mensaje: "" });
+        setFormData({ nombre: "", empresa: "", telefono: "", email: "", servicio: "", zona: "", fecha: "", mensaje: "" });
       } else {
         toast({ title: "Error al enviar", description: "Intentá de nuevo o contactanos por WhatsApp.", variant: "destructive" });
       }
@@ -86,6 +90,30 @@ const ContactSection = () => {
                     value={formData.empresa}
                     onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
                     placeholder="Nombre de la empresa"
+                    className="h-12 bg-background"
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Teléfono (opcional)</label>
+                  <Input
+                    type="tel"
+                    value={formData.telefono}
+                    onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
+                    placeholder="Ej: +54 9 2254 000000"
+                    className="h-12 bg-background"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Email *</label>
+                  <Input
+                    required
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="tu@email.com"
                     className="h-12 bg-background"
                   />
                 </div>

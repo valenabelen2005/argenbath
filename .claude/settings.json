@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd 'c:/Users/valen/OneDrive/Desktop/Argenbath' && git add -A && git diff --cached --quiet || git commit -m 'Auto-deploy: actualizar archivos' && git push origin main",
+            "timeout": 60,
+            "statusMessage": "Subiendo cambios a Vercel..."
+          }
+        ]
+      }
+    ]
+  }
+}
