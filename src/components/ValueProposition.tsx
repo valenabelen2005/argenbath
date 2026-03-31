@@ -3,11 +3,6 @@ import ScrollReveal from "./ScrollReveal";
 
 const values = [
   {
-    icon: Shield,
-    title: "Fabricantes directos",
-    description: "Somos fabricantes propios. Eso nos permite contar con stock disponible todo el año y garantizar la calidad de cada unidad.",
-  },
-  {
     icon: MapPin,
     title: "Cobertura en Pinamar",
     description: "Presencia local con logística optimizada para toda la zona de Pinamar y alrededores de la Costa Atlántica.",
@@ -39,7 +34,7 @@ const ValueProposition = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {values.map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 0.1}>
               <div className="bg-card rounded-lg p-8 shadow-card hover:shadow-elevated transition-shadow duration-500 group border border-border/50 h-full">

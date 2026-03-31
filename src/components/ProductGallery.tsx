@@ -7,23 +7,23 @@ import product4 from "@/assets/product-4.webp";
 const products = [
   {
     image: product1,
-    name: "Baño Químico Estándar",
-    description: "Unidad resistente y funcional para obras de toda escala. Fácil de transportar e instalar.",
+    name: "Baño para Obras y Proyectos",
+    description: "Unidad práctica y resistente para obras y proyectos en movimiento. Fácil de transportar e instalar en cualquier terreno, ideal para cubrir necesidades básicas con rapidez y eficiencia.",
   },
   {
     image: product2,
-    name: "Tráiler Sanitario VIP",
-    description: "Módulo premium con agua corriente, iluminación y terminaciones de lujo para eventos exclusivos.",
+    name: "Baños Premium para Eventos",
+    description: "Solución premium para eventos que requieren imagen y confort. Equipado con acabados de calidad, iluminación y agua corriente, pensado para ofrecer una experiencia superior.",
   },
   {
     image: product3,
-    name: "Baño Industrial Reforzado",
-    description: "Unidad de alta resistencia para obras de gran envergadura y condiciones exigentes.",
+    name: "Solución Sanitaria para Obras de Gran Escala",
+    description: "Diseñado para obras de gran escala y alto uso continuo. Estructura reforzada y alta durabilidad para soportar condiciones exigentes sin comprometer el servicio.",
   },
   {
     image: product4,
-    name: "Módulo Sanitario Premium",
-    description: "Módulo con múltiples puestos, ideal para obrador o eventos con alto flujo de personas.",
+    name: "Módulos Sanitarios de Alta Capacidad",
+    description: "Módulo sanitario de mayor capacidad, ideal para eventos o proyectos con alto flujo de personas. Ofrece mayor comodidad, múltiples puestos y una presencia más profesional.",
   },
 ];
 
