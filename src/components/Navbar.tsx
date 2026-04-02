@@ -6,14 +6,7 @@ import logo from "@/assets/logo.png";
 const WHATSAPP_URL = "https://wa.me/5492254414116?text=Hola%2C%20quiero%20solicitar%20un%20presupuesto";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { label: "Servicios", href: "#servicios" },
