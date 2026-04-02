@@ -31,12 +31,12 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container-premium flex items-center justify-between h-20 md:h-24">
+      <div className="container-premium flex items-center justify-between h-24 md:h-28">
         <a href="#" className="flex items-center">
           <img
             src={logo}
             alt="Grupo ArgenBath S.A."
-            className={`h-14 md:h-18 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
+            className={`h-20 md:h-24 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
           />
         </a>
 
