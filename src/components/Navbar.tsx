@@ -24,19 +24,13 @@ const Navbar = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-corporate border-b border-border"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md shadow-corporate border-b border-border">
       <div className="container-premium flex items-center justify-between h-24 md:h-28">
         <a href="#" className="flex items-center">
           <img
             src={logo}
             alt="Grupo ArgenBath S.A."
-            className={`h-16 md:h-20 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
+            className="h-16 md:h-20 w-auto -rotate-6"
           />
         </a>
 
@@ -45,9 +39,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium tracking-wide transition-colors hover:text-primary ${
-                scrolled ? "text-foreground/80" : "text-primary-foreground/80 hover:text-primary-foreground"
-              }`}
+              className="text-sm font-medium tracking-wide transition-colors text-foreground/80 hover:text-primary"
             >
               {link.label}
             </a>
@@ -56,7 +48,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className={`gap-2 ${!scrolled ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent" : ""}`}>
+            <Button variant="outline" size="sm" className="gap-2">
               <Phone className="w-4 h-4" />
               WhatsApp
             </Button>
@@ -70,7 +62,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className="lg:hidden p-2 transition-colors text-foreground"
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
