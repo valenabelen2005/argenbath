@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
@@ -6,7 +6,14 @@ import logo from "@/assets/logo.png";
 const WHATSAPP_URL = "https://wa.me/5492254414116?text=Hola%2C%20quiero%20solicitar%20un%20presupuesto";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { label: "Servicios", href: "#servicios" },
@@ -17,13 +24,19 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md shadow-corporate border-b border-border">
-      <div className="container-premium flex items-center justify-between h-24 md:h-28">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-card/95 backdrop-blur-md shadow-corporate border-b border-border"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container-premium flex items-center justify-between h-20 md:h-24">
         <a href="#" className="flex items-center">
           <img
             src={logo}
             alt="Grupo ArgenBath S.A."
-            className="h-16 md:h-20 w-auto -rotate-6"
+            className={`h-14 md:h-18 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
           />
         </a>
 
@@ -32,7 +45,9 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide transition-colors text-foreground/80 hover:text-primary"
+              className={`text-sm font-medium tracking-wide transition-colors hover:text-primary ${
+                scrolled ? "text-foreground/80" : "text-primary-foreground/80 hover:text-primary-foreground"
+              }`}
             >
               {link.label}
             </a>
@@ -41,7 +56,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-2">
+            <Button variant="outline" size="sm" className={`gap-2 ${!scrolled ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent" : ""}`}>
               <Phone className="w-4 h-4" />
               WhatsApp
             </Button>
@@ -55,7 +70,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden p-2 transition-colors text-foreground"
+          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
