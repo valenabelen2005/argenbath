@@ -36,7 +36,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Grupo ArgenBath S.A."
-            className={`h-28 md:h-36 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
+            className={`h-16 md:h-20 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
           />
         </a>
 
