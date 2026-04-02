@@ -45,23 +45,47 @@ const ProductGallery = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, i) => (
             <ScrollReveal key={product.name} delay={i * 0.1}>
-              <div className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500 border border-border/50 h-full">
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted/30">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {i < 2 ? (
+                // Opción A: título overlay sobre la imagen
+                <div className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500 border border-border/50 h-full flex flex-col">
+                  <div className="relative aspect-[3/4] overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h3 className="text-base font-heading font-bold text-white leading-snug">{product.name}</h3>
+                    </div>
+                  </div>
+                  <div className="p-5 flex-1">
+                    <p className="text-muted-foreground text-sm leading-relaxed">{product.description}</p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-2">{product.name}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{product.description}</p>
+              ) : (
+                // Opción B: aspecto vertical, object-cover sin fondo gris
+                <div className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500 border border-border/50 h-full">
+                  <div className="relative aspect-[3/4] overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-heading font-bold text-foreground mb-2">{product.name}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{product.description}</p>
+                  </div>
                 </div>
-              </div>
+              )}
             </ScrollReveal>
           ))}
         </div>
