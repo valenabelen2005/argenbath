@@ -25,18 +25,18 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-visible ${
         scrolled
           ? "bg-card/95 backdrop-blur-md shadow-corporate border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="container-premium flex items-center justify-between h-32 md:h-36">
-        <a href="#" className="flex items-center">
+      <div className="container-premium flex items-center justify-between h-24 md:h-28 overflow-visible">
+        <a href="#" className="flex items-center overflow-visible">
           <img
             src={logo}
             alt="Grupo ArgenBath S.A."
-            className={`h-28 md:h-32 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
+            className={`h-24 md:h-28 w-auto transition-all duration-300 -rotate-6 ${!scrolled ? "brightness-0 invert" : ""}`}
           />
         </a>
 
