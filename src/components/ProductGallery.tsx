@@ -7,6 +7,7 @@ import product4 from "@/assets/product-4.webp";
 const products = [
   {
     image: product1,
+    alt: "Baño químico estándar para obras y proyectos en Pinamar",
     name: "Baño para Obras y Proyectos",
     description: "Unidad práctica y resistente para obras y proyectos en movimiento. Fácil de transportar e instalar en cualquier terreno, ideal para cubrir necesidades básicas con rapidez y eficiencia.",
   },
