@@ -53,7 +53,7 @@ const ProductGallery = () => {
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={product.alt}
                     loading="lazy"
                     width={800}
                     height={600}
