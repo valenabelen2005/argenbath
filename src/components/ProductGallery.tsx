@@ -19,6 +19,7 @@ const products = [
   },
   {
     image: product3,
+    alt: "Módulo sanitario portátil para obras de gran escala en Buenos Aires",
     name: "Solución Sanitaria para Obras de Gran Escala",
     description: "Diseñado para obras de gran escala y alto uso continuo. Estructura reforzada y alta durabilidad para soportar condiciones exigentes sin comprometer el servicio.",
   },
