@@ -25,6 +25,7 @@ const products = [
   },
   {
     image: product4,
+    alt: "Módulo sanitario de alta capacidad para eventos y proyectos en Pinamar",
     name: "Módulos Sanitarios de Alta Capacidad",
     description: "Módulo sanitario de mayor capacidad, ideal para eventos o proyectos con alto flujo de personas. Ofrece mayor comodidad, múltiples puestos y una presencia más profesional.",
   },
