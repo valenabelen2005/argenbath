@@ -26,6 +26,7 @@ const Footer = () => {
 
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-widest text-primary-foreground/50 mb-6">Contacto</h4>
+            <address className="not-italic">
             <ul className="space-y-4 text-sm text-primary-foreground/70">
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary-foreground/40" />
@@ -43,9 +44,10 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary-foreground/40" />
-                Pinamar, Buenos Aires
+                Pinamar, Buenos Aires, Argentina
               </li>
             </ul>
+            </address>
           </div>
         </div>
 
