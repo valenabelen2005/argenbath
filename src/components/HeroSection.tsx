@@ -7,7 +7,7 @@ const WHATSAPP_URL = "https://wa.me/5492254414116?text=Hola%2C%20quiero%20solici
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+    <section aria-label="Hero" className="relative min-h-[100vh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="Baños portátiles premium en obra" width={1920} height={1080} className="w-full h-full object-cover" />
