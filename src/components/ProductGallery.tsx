@@ -13,6 +13,7 @@ const products = [
   },
   {
     image: product2,
+    alt: "Baño químico premium para eventos en Costa Atlántica",
     name: "Baños Premium para Eventos",
     description: "Solución premium para eventos que requieren imagen y confort. Equipado con acabados de calidad, iluminación y agua corriente, pensado para ofrecer una experiencia superior.",
   },
